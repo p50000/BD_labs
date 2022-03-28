@@ -28,25 +28,29 @@ phoneNumber int,
 
 CREATE TABLE ShippingAddress
 (
+address_id int NOT NULL PRIMARY KEY,
 house# int NOT NULL,
 street char(50),
 city char(50),
 district char(50),
 );
 
-CREATE TABLE Includes ( 
-  FOREIGN KEY (orderId) REFERENCES Order,
-  FOREIGN KEY (itemId) REFERENCES Item,
+CREATE TABLE OrderToItem 
+( 
+  FOREIGN KEY (order_id) REFERENCES Order,
+  FOREIGN KEY (item_id) REFERENCES Item,
   quantity int,
 );
 
-CREATE TABLE Produce ( 
-  FOREIGN KEY (itemId) REFERENCES Item,
-  FOREIGN KEY (manufacturerId) REFERENCES Manufacturer,
+CREATE TABLE Produce 
+( 
+  FOREIGN KEY (item_id) REFERENCES Item,
+  FOREIGN KEY (manufacturer_id) REFERENCES Manufacturer,
   quantity int,
 );
 
-CREATE TABLE PlaceA ( 
-  FOREIGN KEY (orderId) REFERENCES Order,
-  FOREIGN KEY (clientId) REFERENCES Customer,
+CREATE TABLE CustomerToOrder 
+( 
+  FOREIGN KEY (order_id) REFERENCES Order,
+  FOREIGN KEY (client_id) REFERENCES Customer,
 );
