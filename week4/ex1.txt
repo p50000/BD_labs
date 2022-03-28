@@ -20,13 +20,13 @@ item_id int NOT NULL PRIMARY KEY,
 description char(500),
 );
 
-CREATE TABLE Manufacturer,
+CREATE TABLE Manufacturer
 (
 manufacturer_id int NOT NULL,
 phoneNumber int,
 );
 
-CREATE TABLE ShippingAddress,
+CREATE TABLE ShippingAddress
 (
 house# int NOT NULL,
 street char(50),

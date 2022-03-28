@@ -1,0 +1,49 @@
+CREATE TABLE Salesperson
+(
+salesperson_id int NOT NULL PRIMARY KEY,
+);
+
+CREATE TABLE Customer
+(
+customer_id int int NOT NULL PRIMARY KEY,
+car Car NOT NULL
+);
+
+CREATE TABLE Mechanic
+(
+mechanic_id int int NOT NULL PRIMARY KEY,
+car Car NOT NULL
+);
+
+CREATE TABLE Car
+(
+serial_num int NOT NULL PRIMARY KEY,
+service_ticket char(500)
+);
+
+CREATE TABLE CustomerPurchase ( 
+  FOREIGN KEY (customer_id) REFERENCES Customer,
+  FOREIGN KEY (serial_num) REFERENCES Car,
+);
+
+CREATE TABLE SalespersonSales ( 
+  FOREIGN KEY (serial_num) REFERENCES Car,
+  FOREIGN KEY (salesperson_id) REFERENCES Salesperson,
+);
+
+CREATE TABLE Invoices ( 
+  FOREIGN KEY (customer_id) REFERENCES Customer,
+  FOREIGN KEY (salesperson_id) REFERENCES Salesperson,
+);
+
+CREATE TABLE Service ( 
+  FOREIGN KEY (serial_num) REFERENCES Car,
+  history char(500)
+  car_parts char(500)
+);
+
+CREATE TABLE MechanicJobs ( 
+  FOREIGN KEY (serialNum) REFERENCES Car,
+  FOREIGN KEY (mechanicId) REFERENCES Mechanic,
+  history char(500)
+);
