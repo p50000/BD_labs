@@ -1,0 +1,52 @@
+CREATE TABLE Customer
+(
+client_id int NOT NULL PRIMARY KEY,
+ballance int NOT NULL,
+creditLimit int,
+discount int,
+shippingAddress ShippingAddress,
+);
+
+CREATE TABLE Order
+(
+order_id int NOT NULL PRIMARY KEY,
+date char(50),
+shippingAddress ShippingAddress
+);
+
+CREATE TABLE Item,
+(
+item_id int NOT NULL PRIMARY KEY,
+description char(500),
+);
+
+CREATE TABLE Manufacturer,
+(
+manufacturer_id int NOT NULL,
+phoneNumber int,
+);
+
+CREATE TABLE ShippingAddress,
+(
+house# int NOT NULL,
+street char(50),
+city char(50),
+district char(50),
+);
+
+CREATE TABLE Includes ( 
+  FOREIGN KEY (orderId) REFERENCES Order,
+  FOREIGN KEY (itemId) REFERENCES Item,
+  quantity int,
+);
+
+CREATE TABLE Produce ( 
+  FOREIGN KEY (itemId) REFERENCES Item,
+  FOREIGN KEY (manufacturerId) REFERENCES Manufacturer,
+  quantity int,
+);
+
+CREATE TABLE PlaceA ( 
+  FOREIGN KEY (orderId) REFERENCES Order,
+  FOREIGN KEY (clientId) REFERENCES Customer,
+);
