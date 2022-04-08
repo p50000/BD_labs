@@ -4,7 +4,7 @@ import psycopg2
 from faker import Faker
 # https://stackabuse.com/working-with-postgresql-in-python/
 con = psycopg2.connect(database="customers", user="postgres",
-                       password="smi1lJ@n", host="127.0.0.1", port="5432")
+                       password="smi1lJ@n", host="localhost", port="5432")
 
 print("Database opened successfully")
 cur = con.cursor()
