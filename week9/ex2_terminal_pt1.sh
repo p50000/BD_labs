@@ -165,7 +165,7 @@ postgres=*# rollback;
 ROLLBACK
 
 # Explanation: unlike the READ COMMITED isolation level, the changes of the username at the second terminal were not diplayed in the first even after being commited.
-# As for concurrent update, erminal 2 updates table because it has latest version of table,  while terminal 1 gets  serialization errorwhen it tries to update
+# As for concurrent update, terminal 2 updates table because it has latest version of table,  while terminal 1 gets serialization error when it tries to update
 # the table because it works with old version of it.
 
 

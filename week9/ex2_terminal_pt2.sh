@@ -78,7 +78,6 @@ postgres=# select * from account;
  mike     | Michael Dole     |     103 |        2
 (5 rows)
 
-
 ### terminal 2
 
 postgres=# BEGIN transaction ISOLATION LEVEL REPEATABLE READ;
