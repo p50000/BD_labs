@@ -1,0 +1,1 @@
+Create(p:Fighter {name:'Khabib Nurmagomedov',weight:'155'}),(pp:Fighter {name:'Rafael Dos Anjos', weight:'155'}), (p)-[:beats]->(pp)
